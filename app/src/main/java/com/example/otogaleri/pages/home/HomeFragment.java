@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ilanverbuton();
+        ilanlarButton();
     }
 
     private void ilanverbuton() {
@@ -38,6 +39,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getApplicationContext(), ContentActivity.class);
+                intent.putExtra("fragment", "myads");
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void ilanlarButton() {
+
+        binding.ilanlarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), ContentActivity.class);
+                intent.putExtra("fragment", "ads");
                 startActivity(intent);
             }
         });

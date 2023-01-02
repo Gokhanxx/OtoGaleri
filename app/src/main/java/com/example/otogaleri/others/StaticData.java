@@ -23,6 +23,9 @@ public class StaticData {
     static String ortalamayakit;
     static String depohacmi;
     static String kullaniciadi;
+    static String ilanid;
+    static String ucret;
+
 
 
     public static String getUye_id() {
@@ -193,6 +196,23 @@ public class StaticData {
     public static void setKullaniciadi(String kullaniciadi) {
         StaticData.kullaniciadi = kullaniciadi;
     }
+
+    public static String getIlanid() {
+        return ilanid;
+    }
+
+    public static void setIlanid(String ilanid) {
+        StaticData.ilanid = ilanid;
+    }
+
+    public static String getUcret() {
+        return ucret;
+    }
+
+    public static void setUcret(String ucret) {
+        StaticData.ucret = ucret;
+    }
+
 
 
 }

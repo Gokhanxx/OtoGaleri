@@ -1,10 +1,11 @@
 package com.example.otogaleri.pages.myads;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.otogaleri.models.Uyeler;
-import com.example.otogaleri.models.iller;
+import com.example.otogaleri.models.Iller;
 import com.example.otogaleri.restapi.ManagerAll;
 
 import java.util.List;
@@ -18,24 +19,25 @@ public class MyAdsViewModel extends ViewModel {
     // TODO: Implement the ViewModel
 
     public MutableLiveData<String> resultmessage;
-    public MutableLiveData<List<iller>> resultlist;
+    public MutableLiveData<List<Iller>> resultlist;
     public MutableLiveData<Boolean> resultiserror = new MutableLiveData<>();
     public MutableLiveData<Boolean> resultdialog = new MutableLiveData<>();
 
     public void illeridoldur() {
         resultmessage = new MutableLiveData<>();
         resultlist = new MutableLiveData<>();
-        Call<List<iller>> il = ManagerAll.getInstance().illist();
-        il.enqueue(new Callback<List<iller>>() {
+        Call<List<Iller>> il = ManagerAll.getInstance().illist();
+        il.enqueue(new Callback<List<Iller>>() {
             @Override
-            public void onResponse(Call<List<iller>> call, Response<List<iller>> response) {
+            public void onResponse(Call<List<Iller>> call, Response<List<Iller>> response) {
                 if (response.isSuccessful()) {
+
                     resultlist.setValue(response.body());
                 }
             }
 
             @Override
-            public void onFailure(Call<List<iller>> call, Throwable t) {
+            public void onFailure(Call<List<Iller>> call, Throwable t) {
                 resultlist.setValue(null);
             }
         });

@@ -13,7 +13,7 @@ public class LoginViewModel extends ViewModel {
 
 
     public MutableLiveData<String> resultmessage;
-    public MutableLiveData<Uyeler> resultlist ;
+    public MutableLiveData<Uyeler> resultlist;
     public MutableLiveData<Boolean> resultiserror = new MutableLiveData<>();
     public MutableLiveData<Boolean> resultdialog = new MutableLiveData<>();
 

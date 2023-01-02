@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="#f7bc05"
     android:label="@string/title_activity_login"
-    android:orientation="vertical"
     tools:context=".pages.myads.MyAdsFragment">
 
     <ScrollView
@@ -21,7 +20,7 @@
                 android:id="@+id/ilanturu_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:spinnerMode="dialog" />
 
             <Spinner
                 android:id="@+id/kimden_spinner"
@@ -67,7 +66,8 @@
             <Spinner
                 android:id="@+id/iller_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog" />
 
             <EditText
                 android:id="@+id/ilceler_edittext"
@@ -118,9 +118,9 @@
             <EditText
                 android:id="@+id/yillar_edittext"
                 android:layout_width="match_parent"
-                android:inputType="numberSigned"
                 android:layout_height="wrap_content"
                 android:hint="Araç Yıl Bilgisini giriniz"
+                android:inputType="numberSigned"
                 android:textColorHint="#203040" />
 
             <EditText
@@ -129,8 +129,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Araç Km Bilgisini giriniz"
                 android:textColorHint="#203040" />
-
-
 
 
             <TextView
@@ -197,29 +195,37 @@
                 android:hint="Depo Hacmi Bilgisini giriniz"
                 android:textColorHint="#203040" />
 
+            <EditText
+                android:id="@+id/ucret_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ücret Bilgisini giriniz"
+                android:textColorHint="#203040" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/geri_button"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/menu_buton_back"
                     android:text="Geri" />
 
                 <Button
                     android:id="@+id/ileri_button"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/menu_buton_back"
                     android:text="ileri" />
 

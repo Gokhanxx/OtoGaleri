@@ -98,8 +98,6 @@ public class LoginFragment extends Fragment {
             //Log.i("deneme2",s.getId());
 
             sharedPreferences = getContext().getSharedPreferences("giris", 0);
-
-
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("uye_id", uye.getId());
             editor.putString("uye_kullaniciadi", uye.getKadi());

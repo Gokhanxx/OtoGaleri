@@ -93,7 +93,7 @@ public class NewUserFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setTitle("Bilgiler Ekranı");
         progressDialog.setMessage("Devam eden işleminiz bulunmaktadır. Lütfen bekleyiniz..");
-        progressDialog.setCancelable(false);
+        progressDialog.setCancelable(false);//diğer yerlere tıklanmasın diye
         progressDialog.show();
     }
 

@@ -1,10 +1,8 @@
 package com.example.otogaleri.pages.myads;
 
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,28 +13,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.otogaleri.R;
 import com.example.otogaleri.activities.MainActivity;
 import com.example.otogaleri.databinding.FragmentMyadsBinding;
 
-import com.example.otogaleri.models.Uyeler;
-import com.example.otogaleri.models.iller;
 import com.example.otogaleri.others.ChangeFragment;
 import com.example.otogaleri.others.StaticData;
 import com.example.otogaleri.pages.myadsimage.MyadsImageFragment;
-import com.example.otogaleri.restapi.ManagerAll;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class MyAdsFragment extends Fragment {
@@ -81,7 +70,6 @@ public class MyAdsFragment extends Fragment {
         }
 
 
-
         binding.ilcelerEdittext.setText(StaticData.getIlce());
         binding.mahalelerEdittext.setText(StaticData.getMahalle());
         binding.markalarEdittext.setText(StaticData.getMarka());
@@ -95,6 +83,7 @@ public class MyAdsFragment extends Fragment {
         binding.yakittipiEdittext.setText(StaticData.getYakittipi());
         binding.ortyakitEdittext.setText(StaticData.getOrtalamayakit());
         binding.depohacmiEdittext.setText(StaticData.getDepohacmi());
+        binding.ucretEdittext.setText(StaticData.getUcret());
     }
 
     public void spinnerdoldur() {
@@ -122,7 +111,6 @@ public class MyAdsFragment extends Fragment {
             illerlistadaper.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
             binding.illerSpinner.setAdapter(illerlistadaper);
-
 
 
             //veriyi okumada sorun olduğu için metotiçinde set ataması yapıldı
@@ -179,7 +167,8 @@ public class MyAdsFragment extends Fragment {
                         !binding.azamisuratEdittext.getText().toString().equals("") &&
                         !binding.yakittipiEdittext.getText().toString().equals("") &&
                         !binding.ortyakitEdittext.getText().toString().equals("") &&
-                        !binding.depohacmiEdittext.getText().toString().equals("")) {
+                        !binding.depohacmiEdittext.getText().toString().equals("") &&
+                        !binding.ucretEdittext.getText().toString().equals("")) {
 
                     StaticData.setBaslik(binding.ilanbaslikEdittext.getText().toString());
                     StaticData.setAciklama(binding.ilanaciklamaEdittext.getText().toString());
@@ -201,6 +190,7 @@ public class MyAdsFragment extends Fragment {
                     StaticData.setYakittipi(binding.yakittipiEdittext.getText().toString());
                     StaticData.setOrtalamayakit(binding.ortyakitEdittext.getText().toString());
                     StaticData.setDepohacmi(binding.depohacmiEdittext.getText().toString());
+                    StaticData.setUcret(binding.ucretEdittext.getText().toString());
 //
 
                     ChangeFragment changeFragment = new ChangeFragment(getContext(), new MyadsImageFragment(), "replaceFragMyAdsImage", R.id.content_FrameLayout);
@@ -224,8 +214,6 @@ public class MyAdsFragment extends Fragment {
                 //fragmentten aktivityi geri tuşu yaptığında tekrar açılmaması için eklendi
                 getActivity().finish();
             }
-
-
         });
     }
 

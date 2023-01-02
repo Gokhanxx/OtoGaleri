@@ -14,6 +14,7 @@ import com.example.otogaleri.R;
 import com.example.otogaleri.others.StaticData;
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
+import androidx.collection.CircularArray;
 import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -68,9 +69,7 @@ public class MainActivity extends AppCompatActivity {
          navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        navigationControlButton();
-
+         navigationControlButton();
     }
 
     public void navigationControlButton() {

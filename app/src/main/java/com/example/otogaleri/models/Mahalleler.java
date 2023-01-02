@@ -1,28 +1,29 @@
 package com.example.otogaleri.models;
 
-public class Iller {
-    private String Id;
-    private String il;
+public class Mahalleler {
+
+    private String id;
+    private String mahalle;
     private String resultMessage;
     private boolean isSelected;
     private String sql;
 
+
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getIl() {
-        return il;
+    public String getMahalle() {
+        return mahalle;
     }
 
-    public void setIl(String il) {
-        this.il = il;
+    public void setMahalle(String mahalle) {
+        this.mahalle = mahalle;
     }
-
 
     public String getResultMessage() {
         return resultMessage;
@@ -50,14 +51,15 @@ public class Iller {
 
     @Override
     public String toString() {
-        return "Iller{" +
-                "sehirId='" + Id + '\'' +
-                ", sehirAdi='" + il + '\'' +
+        return "Mahalleler{" +
+                "id='" + id + '\'' +
+                ", mahalle='" + mahalle + '\'' +
                 ", resultMessage='" + resultMessage + '\'' +
                 ", isSelected=" + isSelected +
                 ", sql='" + sql + '\'' +
                 '}';
     }
+
 
 
 }
